@@ -4,29 +4,60 @@
         <meta charset= "UTF-8">
         <meta name= "viewport" content="width=device-width, inital-scale=1.0">
         <link rel="stylesheet" type="text/css" href="NYT.css">
-        <title>NYT Developer</title>
+        <title>API Console - NYT Developers Network</title>
     </head>
     <body>
-        <form>
-        <div class="container">
-        <div id="header">
-            <h1>The New York Times<span class="highlight"> Developers</span></h1>
-        </div>
-
-    <div class="form-group">
-        <span class="label">Key Name</span>
-    <div class="input">
-        <input type="text" name="name" placeholder="Enter Something Relevant to the Article" required>
-    </div>
-</div>
-<div class="form-group">
-    <span class="label">Year</span>
-    <div class="input">
-        <input type="text" placeholder="Enter Year">
-    </div>
-</div>
-<button type="Submit" class="button1">Submit</button>
-</div>
-</form>
+            <!DOCTYPE html>
+            <html lang="en-US">
+            
+            <head>
+               <meta charset="UTF-8">
+               <title>NY Times Research</title>
+            
+               <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+                   crossorigin="anonymous">
+                   <link rel="stylesheet" type="text/css" href="reset.css">
+                   <link rel="stylesheet" type="text/css" href="style.css">
+            
+            </head>
+            
+            <body>
+               <div class="container">
+                   <div class="jumbotron">
+                       <h1 class="title">New York Times Search</h1>
+                   </div>
+               </div>
+            
+               <div class="search-parameters">
+                   <ul>
+                       <li>
+                           <label for="">Search Term:</label>
+                           <input type="text" id="name" name="name" placeholder="Germany" required="required">
+                       </li>
+                       <li>
+                           <label for="">Number of Records to Retrieve</label>
+                           <input type="text" id="text" name="text" placeholder="5" required="required">
+                       </li>
+                       <li>
+                           <label for="">Start Year(Optional):</label>
+                           <input type="text" id="text" name="text" placeholder="2017" required="required">
+                       </li>
+                       <li>
+                           <label for="">End Year(Optional):</label>
+                           <input type="text" id="text" name="text" placeholder="2018" required="required">
+                       </li>
+                   </ul>
+                   <button>Submit</button>
+                   <button>Clear Results</button>
+               </div>
+            
+               <div class="top-articles">
+            
+               </div>
+            
+            
+            </body>
+            
+            </html>
     </body>
 </html>
