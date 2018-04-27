@@ -7,14 +7,30 @@
 
 //function to generate buttons that add pagination text to the 
 //initial api query if results request is more than 10
+<<<<<<< HEAD
 
 
 function displayNYTResults() {
+=======
+$(document).ready(function(){
+$("div.search-parameters").on("click", "#search", function(){
+    console.log("clicked");
+    displayNYTResults();
+});
+});
+>>>>>>> 64bf7573128bcff115715547b6251586d055eb83
 
     //example: var movie = $(this).attr("data-name");
 $(document).ready()
 function displayNYTResults() {
+<<<<<<< HEAD
 
+=======
+   var searchTerm = $(".searchterm").val();
+   var numofRecords = $(".retrieve").val();
+   var startYear = $(".startyear").val();
+   var endYear = $(".endyear").val();
+>>>>>>> 64bf7573128bcff115715547b6251586d055eb83
    console.log(searchTerm);
     var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
     url += '?' + $.param({
@@ -29,22 +45,23 @@ function displayNYTResults() {
         method: 'GET',
     }).done(function (result) {
         for (i = 0; i < 10; i++) {
-            var target = results.response.docs[i];
+            var target = result.response.docs[i];
             var resultTitle = $("<h2>").text(target.headline.main);
             var resultAuthor = $("<p>").text(target.byline.original);
             var resultLink = $("<a>").attr("href", target.web_url);
             var resultDiv = $("<div>").attr("class", "result-entry");
     
-            $(resultDiv).append(resultNumber[i], resultTitle, resultAuthor);
+            $(resultDiv).append(resultTitle, resultAuthor);
+            $(".content").append(resultDiv);
         };
-        $(content).append(resultDiv);
-       
+        
     }).fail(function (err) {
         throw err;
     });
     
 }
 
+<<<<<<< HEAD
 $("#search").on("click", function(){
     // displayNYTResults();
     console.log(searchTerm);
@@ -52,8 +69,9 @@ $("#search").on("click", function(){
 
 
 
+=======
+>>>>>>> 64bf7573128bcff115715547b6251586d055eb83
 function generateResultDivs() {
-
     
 }
 
