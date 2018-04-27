@@ -9,37 +9,64 @@ body {
     margin: 0 auto;
 }
 
-.jumbotron{
-    background: navy;
-    color: white;
-    font-weight: bolder;
+.top{
     margin: 0 auto;
-    margin-bottom: 40px;
-    padding: 10px;
     text-align: center;
+    background: #1b3f8b;
+    color: white;
+    margin-bottom: 40px;
+    
+    height: 100px;
 }
 
-
-.search-parameters{
-    border: 5px solid black;
+.title{
     margin: 0 auto;
-    margin-bottom: 40px;
+    height: 100px;
 }
 
 header{
-    width: 100%;
-    background: navy;
+    background: #14113f;
     color: white;
-    margin: 0 auto;
+    padding: 0 10px;
+    
 }
+
+ul{
+    list-style-type: none;
+    padding: 0 10px;
+}
+
+.search-parameters{
+    border: 2px solid black;
+    margin-bottom: 40px;
+    
+}
+
+label{
+    height: 20px;
+    margin-bottom: 0;
+}
+
+label,
+input[type=text]{
+    display: block;
+    width: 100%;
+    padding: 0 10px;
+    font-size: 14px;
+  
+}
+
+input[type=text]{
+    margin: 5px;
+}
+
+
 
 input{
     width: 100%;
 }
 
 .top-articles{
-    border: 5px solid black;
+    border: 2px solid black;
     
-    padding: 10px;
-    margin: 0 auto;
 }
