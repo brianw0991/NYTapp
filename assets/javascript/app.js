@@ -10,11 +10,20 @@ var endYear = "";
 
 //function to generate buttons that add pagination text to the 
 //initial api query if results request is more than 10
-
-
+$(document).ready(function(){
+$("div.search-parameters").on("click", "#search", function(){
+    console.log("clicked");
+    displayNYTResults();
+});
+});
 
 function displayNYTResults() {
-   searchTerm = $("#searchterm").val();
+
+   var searchTerm = $(".searchterm").val();
+   var numofRecords = $(".retrieve").val();
+   var startYear = $(".startyear").val();
+   var endYear = $(".endyear").val();
+
    console.log(searchTerm);
    numofRecords = $("#retrieve").val();
    startYear = $("#startyear").val();
@@ -33,22 +42,25 @@ function displayNYTResults() {
         method: 'GET',
     }).done(function (result) {
         for (i = 0; i < 10; i++) {
-            var target = results.response.docs[i];
+            var target = result.response.docs[i];
             var resultTitle = $("<h2>").text(target.headline.main);
             var resultAuthor = $("<p>").text(target.byline.original);
-            var resultLink = $("<a>").attr("href", target.web_url);
+            var resultLink =   target.web_url ;
             var resultDiv = $("<div>").attr("class", "result-entry");
     
-            $(resultDiv).append(resultNumber[i], resultTitle, resultAuthor);
+            $(resultDiv).append(resultTitle, resultAuthor).wrapInner(function(){
+                return "<a href = '" +resultLink+ "'/>"; 
+             });
+            $(".content").append(resultDiv);
         };
-        $(content).append(resultDiv);
-       
+        
     }).fail(function (err) {
         throw err;
     });
     
 }
 
+<<<<<<< HEAD
 $("#search").on("click", function(){
     displayNYTResults();
 
@@ -61,8 +73,9 @@ $("#search").on("click", function(){
 
 
 
+=======
+>>>>>>> ede8fc06737d108fdbd05dfd22b108618f43cebd
 function generateResultDivs() {
-
     
 }
 
