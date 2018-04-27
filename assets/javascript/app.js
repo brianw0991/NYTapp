@@ -10,8 +10,15 @@
 $(document).ready(function(){
 $("div.search-parameters").on("click", "#search", function(){
     console.log("clicked");
+    clear();
     displayNYTResults();
+
 });
+
+$("div.search-parameters").on("click", "#clear", function() {
+    clear();
+});
+
 });
 
     //example: var movie = $(this).attr("data-name");
@@ -34,7 +41,7 @@ function displayNYTResults() {
         url: url,
         method: 'GET',
     }).done(function (result) {
-        for (i = 0; i < 10; i++) {
+        for (i = 0; i < numofRecords; i++) {
             var target = result.response.docs[i];
             var resultTitle = $("<h2>").text(target.headline.main);
             var resultAuthor = $("<p>").text(target.byline.original);
@@ -46,13 +53,16 @@ function displayNYTResults() {
              });
             $(".content").append(resultDiv);
         };
-        
+
     }).fail(function (err) {
         throw err;
     });
     
 }
+function clear(){
+    $(".content").empty();
 
+}
 function generateResultDivs() {
     
 }
