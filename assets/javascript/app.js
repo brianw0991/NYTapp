@@ -1,5 +1,8 @@
 //pull text from results field to insert into api query
-
+var searchTerm = "";
+var numofRecords = "";
+var startYear = "";
+var endYear = "";
 
 
 //search button to trigger ajax function
@@ -15,12 +18,18 @@ $("div.search-parameters").on("click", "#search", function(){
 });
 
 function displayNYTResults() {
+
    var searchTerm = $(".searchterm").val();
    var numofRecords = $(".retrieve").val();
    var startYear = $(".startyear").val();
    var endYear = $(".endyear").val();
+
    console.log(searchTerm);
-    var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+   numofRecords = $("#retrieve").val();
+   startYear = $("#startyear").val();
+   endYear = $("#endyear").val();
+   
+    var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
     url += '?' + $.param({
         'api-key': "3b0912289d5d4dfb9f98296b8558eb8a",
         'q': searchTerm,
@@ -29,7 +38,7 @@ function displayNYTResults() {
     });
 
     $.ajax({
-        url: url,
+        url: queryURL,
         method: 'GET',
     }).done(function (result) {
 
@@ -51,9 +60,22 @@ function displayNYTResults() {
     
 };
 
-function generateResultDivs(result) {
 
-}
+
+
+$("#search").on("click", function(){
+    displayNYTResults();
+
+
+
+
+
+
+});
+
+
+
+
 //////////////////////////////////////////////////////////////////////////
 
 
