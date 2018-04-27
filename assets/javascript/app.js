@@ -1,5 +1,8 @@
 //pull text from results field to insert into api query
-
+var searchTerm = "";
+var numofRecords = "";
+var startYear = "";
+var endYear = "";
 
 
 //search button to trigger ajax function
@@ -24,21 +27,27 @@ $("div.search-parameters").on("click", "#clear", function() {
     //example: var movie = $(this).attr("data-name");
 $(document).ready()
 function displayNYTResults() {
+
    var searchTerm = $(".searchterm").val();
    var numofRecords = $(".retrieve").val();
    var startYear = $(".startyear").val();
    var endYear = $(".endyear").val();
+
    console.log(searchTerm);
-    var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+   numofRecords = $("#retrieve").val();
+   startYear = $("#startyear").val();
+   endYear = $("#endyear").val();
+   
+    var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
     url += '?' + $.param({
         'api-key': "af348c7aed984630a9779dfd8db1d273",
         'q': searchTerm,
         'begin_date': startYear + "0101",
-        'end_date': endYear + "0101"
+        'end_date': endYear + "0101",
     });
 
     $.ajax({
-        url: url,
+        url: queryURL,
         method: 'GET',
     }).done(function (result) {
         for (i = 0; i < numofRecords; i++) {
