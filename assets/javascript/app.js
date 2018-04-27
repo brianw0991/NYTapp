@@ -35,9 +35,7 @@ $("#search").on(click, function(){
     generateResultDivs();
 });
     $("div.content").append(resultDiv)
-});
-  
-}.fail(function(err) {
+}).fail(function(err) {
   throw err;
 });
 
@@ -51,7 +49,7 @@ url += '?' + $.param({
     'q': "trump",
     'begin_date': startYear + "0101",
     'end_date': endYear + "0101",
-  'page': page[i];
+  'page': page[i]
 });
 
 $.ajax({
@@ -62,8 +60,7 @@ $.ajax({
 }).fail(function(err) {
   throw err;
 });
-
-};}
+}
 
 function generateResultDivs(){
    
@@ -76,7 +73,5 @@ function generateResultDivs(){
        
         $(resultDiv).append(resultNumber[i], resultTitle, resultAuthor);
     }
-    $(content).append(resultDiv);
-
-  
-}
+    $(content).append(resultDiv); 
+};
