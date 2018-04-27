@@ -1,63 +1,61 @@
 <!DOCTYPE html>
-<html lang= "en-us">
-    <head>
-        <meta charset= "UTF-8">
-        <meta name= "viewport" content="width=device-width, inital-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="NYT.css">
-        <title>API Console - NYT Developers Network</title>
-    </head>
-    <body>
-            <!DOCTYPE html>
-            <html lang="en-US">
-            
-            <head>
-               <meta charset="UTF-8">
-               <title>NY Times Research</title>
-            
-               <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
-                   crossorigin="anonymous">
-                   <link rel="stylesheet" type="text/css" href="reset.css">
-                   <link rel="stylesheet" type="text/css" href="style.css">
-            
-            </head>
-            
-            <body>
-               <div class="container">
-                   <div class="jumbotron">
-                       <h1 class="title">New York Times Search</h1>
-                   </div>
-               </div>
-            
-               <div class="search-parameters">
-                   <ul>
-                       <li>
-                           <label for="">Search Term:</label>
-                           <input type="text" id="name" name="name" placeholder="Germany" required="required">
-                       </li>
-                       <li>
-                           <label for="">Number of Records to Retrieve</label>
-                           <input type="text" id="text" name="text" placeholder="5" required="required">
-                       </li>
-                       <li>
-                           <label for="">Start Year(Optional):</label>
-                           <input type="text" id="text" name="text" placeholder="2017" required="required">
-                       </li>
-                       <li>
-                           <label for="">End Year(Optional):</label>
-                           <input type="text" id="text" name="text" placeholder="2018" required="required">
-                       </li>
-                   </ul>
-                   <button>Submit</button>
-                   <button>Clear Results</button>
-               </div>
-            
-               <div class="top-articles">
-            
-               </div>
-            
-            
-            </body>
-            
-            </html>
-    </body>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <title>NY Times Research</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/CSS/style.css">
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <header class="top">
+
+            <h1 class="title">📰 New York Times Search</h1>
+
+        </header>
+
+        <div class="search-parameters">
+            <header>📰 Search Parameter</header>
+            <ul>
+                <li>
+                    <label for="">Search Term:</label>
+                    <input type="text" id="searchterm" placeholder="Germany" required="required">
+                </li>
+                <li>
+                    <label for="">Number of Records to Retrieve:</label>
+                    <input type="text" id="retrieve" placeholder="5" required="required">
+                </li>
+                <li>
+                    <label for="">Start Year(Optional):</label>
+                    <input type="text" id="startyear" placeholder="YYYYMMDD" required="required">
+                </li>
+                <li>
+                    <label for="">End Year(Optional):</label>
+                    <input type="text" id="endyear" placeholder="YYYYMMDD" required="required">
+                </li>
+            </ul>
+            <button id="search">🔍Search</button>
+            <button id="clear">🗑Clear Results</button>
+        </div>
+
+
+        <div class="top-articles">
+            <header>📰 Top Articles</header>
+            <div class="content">
+                
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+
 </html>
