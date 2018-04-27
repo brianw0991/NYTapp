@@ -33,7 +33,7 @@ $.ajax({
 $("#search").on(click, function(){
     console.log(result);
     generateResultDivs();
-}
+});
     $("div.content").append(resultDiv)
 });
   
@@ -43,7 +43,6 @@ $("#search").on(click, function(){
 
 
 function multiplePageResults (numberofPages){
-  
     var   numberofResults = userINput / 10;
 for (i=0 ; i<numberofResults.length; i++){
     var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
@@ -52,7 +51,7 @@ url += '?' + $.param({
     'q': "trump",
     'begin_date': startYear + "0101",
     'end_date': endYear + "0101",
-  'page': page[i]
+  'page': page[i];
 });
 
 $.ajax({
