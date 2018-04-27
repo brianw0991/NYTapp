@@ -37,7 +37,7 @@ $("#search").on(click, function(){
     $("div.content").append(resultDiv)
 });
   
-}).fail(function(err) {
+}.fail(function(err) {
   throw err;
 });
 
