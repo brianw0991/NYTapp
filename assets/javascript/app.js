@@ -7,30 +7,20 @@
 
 //function to generate buttons that add pagination text to the 
 //initial api query if results request is more than 10
-<<<<<<< HEAD
-
-
-function displayNYTResults() {
-=======
 $(document).ready(function(){
 $("div.search-parameters").on("click", "#search", function(){
     console.log("clicked");
     displayNYTResults();
 });
 });
->>>>>>> 64bf7573128bcff115715547b6251586d055eb83
 
     //example: var movie = $(this).attr("data-name");
 $(document).ready()
 function displayNYTResults() {
-<<<<<<< HEAD
-
-=======
    var searchTerm = $(".searchterm").val();
    var numofRecords = $(".retrieve").val();
    var startYear = $(".startyear").val();
    var endYear = $(".endyear").val();
->>>>>>> 64bf7573128bcff115715547b6251586d055eb83
    console.log(searchTerm);
     var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
     url += '?' + $.param({
@@ -61,16 +51,6 @@ function displayNYTResults() {
     
 }
 
-<<<<<<< HEAD
-$("#search").on("click", function(){
-    // displayNYTResults();
-    console.log(searchTerm);
-});
-
-
-
-=======
->>>>>>> 64bf7573128bcff115715547b6251586d055eb83
 function generateResultDivs() {
     
 }
@@ -101,6 +81,6 @@ function multiplePageResults(numberofPages) {
     var startYear = $("#startyear").val();
     var endYear = $("#endyear").val();
 }
-}
+
 
 
