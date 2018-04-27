@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="assets/CSS/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
         crossorigin="anonymous">
-    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="assets/javascript/app.js"></script>
 
 </head>
@@ -26,19 +26,19 @@
             <ul>
                 <li>
                     <label for="">Search Term:</label>
-                    <input type="text" id="searchterm" placeholder="Germany" required="required">
+                    <input type="text" class="searchterm" placeholder="Germany" required="required">
                 </li>
                 <li>
                     <label for="">Number of Records to Retrieve:</label>
-                    <input type="text" id="retrieve" placeholder="5" required="required">
+                    <input type="text" class="retrieve" placeholder="5" required="required">
                 </li>
                 <li>
                     <label for="">Start Year(Optional):</label>
-                    <input type="text" id="startyear" placeholder="YYYYMMDD" required="required">
+                    <input type="text" class="startyear" placeholder="YYYYMMDD" required="required">
                 </li>
                 <li>
                     <label for="">End Year(Optional):</label>
-                    <input type="text" id="endyear" placeholder="YYYYMMDD" required="required">
+                    <input type="text" class="endyear" placeholder="YYYYMMDD" required="required">
                 </li>
             </ul>
             <button id="search">🔍Search</button>
