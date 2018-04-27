@@ -34,11 +34,8 @@ function displayNYTResults() {
    var endYear = $(".endyear").val();
 
    console.log(searchTerm);
-   numofRecords = $("#retrieve").val();
-   startYear = $("#startyear").val();
-   endYear = $("#endyear").val();
-   
-    var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+
+    var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
     url += '?' + $.param({
         'api-key': "af348c7aed984630a9779dfd8db1d273",
         'q': searchTerm,
@@ -47,7 +44,7 @@ function displayNYTResults() {
     });
 
     $.ajax({
-        url: queryURL,
+        url: url,
         method: 'GET',
     }).done(function (result) {
         for (i = 0; i < numofRecords; i++) {
@@ -63,10 +60,7 @@ function displayNYTResults() {
             $(".content").append(resultDiv);
         };
 
-    }).fail(function (err) {
-        throw err;
     });
-    
 }
 function clear(){
     $(".content").empty();
