@@ -9,16 +9,16 @@
 //initial api query if results request is more than 10
 
 
-
 function displayNYTResults() {
-   var searchTerm = $("#searchterm").val();
-   var numofRecords = $("#retrieve").val();
-   var startYear = $("#startyear").val();
-   var endYear = $("#endyear").val();
+
+    //example: var movie = $(this).attr("data-name");
+$(document).ready()
+function displayNYTResults() {
+
    console.log(searchTerm);
     var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
     url += '?' + $.param({
-        'api-key': "3b0912289d5d4dfb9f98296b8558eb8a",
+        'api-key': "af348c7aed984630a9779dfd8db1d273",
         'q': searchTerm,
         'begin_date': startYear + "0101",
         'end_date': endYear + "0101"
@@ -46,7 +46,8 @@ function displayNYTResults() {
 }
 
 $("#search").on("click", function(){
-    displayNYTResults();
+    // displayNYTResults();
+    console.log(searchTerm);
 });
 
 
@@ -77,5 +78,11 @@ function multiplePageResults(numberofPages) {
             throw err;
         });
     }
+    var searchTerm = $("#searchterm").val().text();
+    var numofRecords = $("#retrieve").val();
+    var startYear = $("#startyear").val();
+    var endYear = $("#endyear").val();
 }
+}
+
 
