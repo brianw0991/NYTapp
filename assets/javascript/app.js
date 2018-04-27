@@ -38,10 +38,12 @@ function displayNYTResults() {
             var target = result.response.docs[i];
             var resultTitle = $("<h2>").text(target.headline.main);
             var resultAuthor = $("<p>").text(target.byline.original);
-            var resultLink = $("<a>").attr("href", target.web_url);
+            var resultLink =   target.web_url ;
             var resultDiv = $("<div>").attr("class", "result-entry");
     
-            $(resultDiv).append(resultTitle, resultAuthor);
+            $(resultDiv).append(resultTitle, resultAuthor).wrapInner(function(){
+                return "<a href = '" +resultLink+ "'/>"; 
+             });
             $(".content").append(resultDiv);
         };
         
