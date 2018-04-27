@@ -32,19 +32,7 @@ $.ajax({
 
 $("#search").on(click, function(){
     console.log(result);
-    var target = ;
-    var resultTitle = $("<h2>").text();
-    var resultAuthor = $("<p>").text();
-    var resultNumber = $("<h2>").text();
-    var resultLink = $("<a>").
-    var resultDiv = $("<div>").attr("class", "result-entry");
-   
-    for (i = 0; i < 10; i++){
-        $(resultDiv).text(resultNumber, resultTitle, resultAuthor);
-        resultDiv =+;
-    }
-  
-    //resultTitle, resultAuthor, resultNumber)
+    generateResultDivs();
 }
     $("div.content").append(resultDiv)
 });
@@ -77,3 +65,19 @@ $.ajax({
 });
 
 };}
+
+function generateResultDivs(){
+   
+    for (i = 0; i < 10; i++){
+        var target = results.response.docs[i];
+        var resultTitle = $("<h2>").text(target.headline.main);
+        var resultAuthor = $("<p>").text(target.byline.original);
+        var resultLink = $("<a>").attr("href", target.web_url);
+        var resultDiv = $("<div>").attr("class", "result-entry");
+       
+        $(resultDiv).append(resultNumber[i], resultTitle, resultAuthor);
+    }
+    $(content).append(resultDiv);
+
+  
+}
