@@ -60,7 +60,7 @@ function displayNYTResults() {
     
 }
 
-<<<<<<< HEAD
+
 $("#search").on("click", function(){
     displayNYTResults();
 
@@ -73,8 +73,7 @@ $("#search").on("click", function(){
 
 
 
-=======
->>>>>>> ede8fc06737d108fdbd05dfd22b108618f43cebd
+
 function generateResultDivs() {
     
 }
