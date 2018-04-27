@@ -25,14 +25,15 @@ function displayNYTResults() {
         'api-key': "3b0912289d5d4dfb9f98296b8558eb8a",
         'q': searchTerm,
         'begin_date': startYear + "0101",
-        'end_date': endYear + "0101"
+        'end_date': endYear + "0101",
     });
 
     $.ajax({
         url: url,
         method: 'GET',
     }).done(function (result) {
-        for (i = 0; i < 10; i++) {
+
+        for (i = 0; i < numofRecords; i++) {
             var target = result.response.docs[i];
             var resultTitle = $("<h2>").text(target.headline.main);
             var resultAuthor = $("<p>").text(target.byline.original);
@@ -43,38 +44,30 @@ function displayNYTResults() {
                 return "<a href = '" +resultLink+ "'/>"; 
              });
             $(".content").append(resultDiv);
-        };
         
-    }).fail(function (err) {
+    }}).fail(function (err) {
         throw err;
     });
     
-}
+};
 
-function generateResultDivs() {
-    
-}
+function generateResultDivs(result) {
 
-function multiplePageResults(numberofPages) {
-    var numberofResults = userINput / 10;
-    for (i = 0; i < numberofResults.length; i++) {
-        var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
-        url += '?' + $.param({
-            'api-key': "3b0912289d5d4dfb9f98296b8558eb8a",
-            'q': "trump",
-            'begin_date': startYear + "0101",
-            'end_date': endYear + "0101",
-            'page': page[i]
-        });
-
-        $.ajax({
-            url: url,
-            method: 'GET',
-        }).done(function (result) {
-            console.log(result);
-        }).fail(function (err) {
-            throw err;
-        });
-    }
 }
+//////////////////////////////////////////////////////////////////////////
+
+
+// function multiplePageResults(numofPage) {
+
+//         var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+//         url += '?' + $.param({
+//             'api-key': "3b0912289d5d4dfb9f98296b8558eb8a",
+//             'q': "trump",
+//             'begin_date': startYear + "0101",
+//             'end_date': endYear + "0101",
+//             'page': numofPage
+//         });
+
+//     }
+// }
 
